@@ -38,3 +38,13 @@ def personal_date(open_browser):
 
 def test_personal_data(personal_date):
     browser.element('#example-modal-sizes-title-lg').should(have.text('Thanks for submitting the form'))
+    browser.element('.modal-body').should(have.text('Yaroslav Gusev'))
+    browser.element('.modal-body').should(have.text('SomeThing@email.com'))
+    browser.element('.modal-body').should(have.text('Male'))
+    browser.element('.modal-body').should(have.text('1111111111'))
+    browser.element('.modal-body').should(have.text('15 March,1931'))
+    browser.element('.modal-body').should(have.text('Physics'))
+    browser.element('.modal-body').should(have.text('Sports, Reading, Music'))
+    browser.element('.modal-body').should(have.text('qfile.png'))
+    browser.element('.modal-body').should(have.text('text text text text text'))
+    browser.element('.modal-body').should(have.text('NCR Delhi'))
