@@ -1,10 +1,10 @@
 from selene import browser, be, have, by
 import os
 
-image = os.path.abspath('./qfile.png')
+image = os.path.abspath('../qa_guru_lesson_5/images/qfile.png')
 
 
-def test_personal_date(open_browser):
+def test_personal_date_static(open_browser):
     browser.open('/')
 
     browser.driver.execute_script("$('#fixedban').remove()")
