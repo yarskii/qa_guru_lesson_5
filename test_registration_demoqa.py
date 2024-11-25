@@ -1,18 +1,19 @@
 from selene import browser, be, have, by
-import pytest
 import os
 
 image = os.path.abspath('./qfile.png')
 
 
-@pytest.fixture
-def personal_date(open_browser):
+def test_personal_date(open_browser):
     browser.open('/')
+
+    browser.driver.execute_script("$('#fixedban').remove()")
+    browser.driver.execute_script("$('footer').remove()")
 
     browser.element('#firstName').type('Yaroslav')
     browser.element('#lastName').type('Gusev')
     browser.element('#userEmail').type('SomeThing@email.com')
-    browser.element('#gender-radio-1').type(have.value(''))
+    browser.element('#genterWrapper').element(by.text('Male')).click()
     browser.element('#userNumber').type(f'1111111111')
 
     browser.element('#dateOfBirth').click().element('[value="2"]').click()
@@ -35,8 +36,6 @@ def personal_date(open_browser):
     browser.element('#react-select-4-input').type('Delhi').should(be.visible).press_enter()
     browser.element('#submit').click()
 
-
-def test_personal_data(personal_date):
     browser.element('#example-modal-sizes-title-lg').should(have.text('Thanks for submitting the form'))
     browser.element('.modal-body').should(have.text('Student Name')).should(have.text('Yaroslav Gusev'))
     browser.element('.modal-body').should(have.text('Student Email')).should(have.text('SomeThing@email.com'))
