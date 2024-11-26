@@ -1,7 +1,7 @@
 from selene import browser, be, have, by
 import os
 
-image = os.path.abspath('../qa_guru_lesson_5/images/qfile.png')
+image = os.path.abspath('qfile.png')
 
 
 def test_personal_date_static(open_browser):
