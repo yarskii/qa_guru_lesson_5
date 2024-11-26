@@ -1,5 +1,4 @@
 from random import randint, choice
-from secrets import choice
 from faker import Faker
 
 FIRST_NAME = Faker().first_name()
