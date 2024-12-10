@@ -1,7 +1,6 @@
 import os
 from random import randint, choice
 from faker import Faker
-from selene import browser
 
 FIRST_NAME = Faker().first_name()
 LAST_NAME = Faker().last_name()
