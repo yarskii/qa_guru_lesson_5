@@ -1,5 +1,7 @@
+import os
 from random import randint, choice
 from faker import Faker
+from selene import browser
 
 FIRST_NAME = Faker().first_name()
 LAST_NAME = Faker().last_name()
@@ -10,10 +12,12 @@ TEL_NUMBER = randint(1000000000, 9999999999)
 
 DATE = Faker().date().split('-')
 YEAR = DATE[0]
-MONTH = int(DATE[1]) - 1
+MONTH = int(DATE[1])
 DAY = int(DATE[2])
-MONTH_STR = {0: "January", 1: "February", 2: "March", 3: "April", 4: "May", 5: "June", 6: "July",
-             7: "August", 8: "September", 9: "October", 10: "November", 11: "December"}
+MONTH_STR = {1: "January", 2: "February", 3: "March", 4: "April", 5: "May", 6: "June", 7: "July",
+             8: "August", 9: "September", 10: "October", 11: "November", 12: "December"}
+
+IMAGE = os.path.abspath('../resources/image/qfile.png')
 
 CURRENT_ADDRESS = Faker().address().replace('\n', " ")
 
