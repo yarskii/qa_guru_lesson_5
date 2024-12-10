@@ -1,4 +1,4 @@
-from demoqa_tests.registration_page import RegistrationPage
+from demoqa_tests.model.pages.registration_page import RegistrationPage
 from resources.basic_data import IMAGE
 
 
