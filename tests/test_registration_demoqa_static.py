@@ -1,5 +1,5 @@
-import os
 from demoqa_tests.model.pages.registration_page import RegistrationPage
+from resources.basic_data import IMAGE
 
 
 def test_personal_date_static(open_browser):
@@ -14,7 +14,7 @@ def test_personal_date_static(open_browser):
     registration_page.fill_date_of_birth(15, 3, 1931)
     registration_page.fill_subjects('Physics')
     registration_page.fill_hobbies('Sports', 'Reading', 'Music')
-    registration_page.fill_image(os.path.abspath('../resources/image/qfile.png'))
+    registration_page.fill_image(IMAGE)
     registration_page.fill_current_address('text ' * 5)
     registration_page.fill_state_and_city('NCR', 'Delhi')
 
