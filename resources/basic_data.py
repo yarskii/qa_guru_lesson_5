@@ -16,7 +16,7 @@ DAY = int(DATE[2])
 MONTH_STR = {1: "January", 2: "February", 3: "March", 4: "April", 5: "May", 6: "June", 7: "July",
              8: "August", 9: "September", 10: "October", 11: "November", 12: "December"}
 
-IMAGE = os.path.abspath('../resources/image/qfile.png')
+IMAGE = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir, 'resources/image/qfile.png'))
 
 CURRENT_ADDRESS = Faker().address().replace('\n', " ")
 
