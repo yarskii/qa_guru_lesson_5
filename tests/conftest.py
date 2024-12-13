@@ -1,4 +1,4 @@
-from selene import browser
+from selene import browser, Config
 from selenium import webdriver
 import pytest
 from selenium.webdriver.chrome.options import Options
@@ -18,12 +18,12 @@ selenoid_pass = os.getenv("SELENOID_PASS")
 selenoid_url = os.getenv("SELENOID_URL")
 
 
-@pytest.fixture(scope='session')
+@pytest.fixture(scope='function')
 def open_browser():
     options = Options()
     selenoid_capabilities = {
         "browserName": "chrome",
-        "browserVersion": "100.0",
+        "browserVersion": "126.0",
         "selenoid:options": {
             "enableVNC": True,
             "enableVideo": True
@@ -35,14 +35,15 @@ def open_browser():
         options=options
     )
 
-    browser.config.driver = driver
+
+    browser1 = browser.Config(driver)
 
     # driver_options = webdriver.ChromeOptions()
     # driver_options.page_load_strategy = 'eager'
     # browser.config.driver_options = driver_options
     # browser.config.base_url = 'https://demoqa.com'
 
-    yield
+    yield browser1
 
     attach.add_screenshot(browser)
     attach.add_logs(browser)
