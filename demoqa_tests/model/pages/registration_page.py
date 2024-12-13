@@ -1,10 +1,14 @@
 from selene import browser, be, have, by
+from selenium import webdriver
 
 
 class RegistrationPage:
 
     def open(self):
-        browser.open('/automation-practice-form')
+        driver_options = webdriver.ChromeOptions()
+        driver_options.page_load_strategy = 'eager'
+        browser.config.driver_options = driver_options
+        browser.open('https://demoqa.com/automation-practice-form')
         browser.driver.execute_script("$('#fixedban').remove()")
         browser.driver.execute_script("$('footer').remove()")
 

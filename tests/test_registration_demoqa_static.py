@@ -2,7 +2,7 @@ from demoqa_tests.model.pages.registration_page import RegistrationPage
 from resources.basic_data import IMAGE
 
 
-def test_personal_date_static(open_browser):
+def test_personal_date_static():
     registration_page = RegistrationPage()
 
     registration_page.open()

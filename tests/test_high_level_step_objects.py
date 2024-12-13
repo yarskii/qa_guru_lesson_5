@@ -3,7 +3,7 @@ from demoqa_tests.model.pages.simple_user_registration_page import SimpleUserReg
 from resources import basic_data
 
 
-def test_personal_date_static(open_browser):
+def test_personal_date_static_high(open_browser):
     registration_page = SimpleUserRegistrationPage()
 
     registration_page.open()
