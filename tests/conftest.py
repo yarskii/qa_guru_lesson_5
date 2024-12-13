@@ -1,4 +1,4 @@
-from selene import browser, Config
+from selene import browser
 from selenium import webdriver
 import pytest
 from selenium.webdriver.chrome.options import Options
@@ -36,7 +36,7 @@ def open_browser():
     )
 
 
-    browser1 = browser.Config(driver)
+    browser1 = browser.config(driver)
 
     # driver_options = webdriver.ChromeOptions()
     # driver_options.page_load_strategy = 'eager'
