@@ -1,15 +1,11 @@
 from selene import browser, have, be, by
 
 from demoqa_tests.data.users import User
-# from selenium import webdriver
 
 
 class SimpleUserRegistrationPage:
 
     def open(self):
-        # driver_options = webdriver.ChromeOptions()
-        # driver_options.page_load_strategy = 'eager'
-        # browser.config.driver_options = driver_options
         browser.open('https://demoqa.com/automation-practice-form')
         browser.driver.execute_script("$('#fixedban').remove()")
         browser.driver.execute_script("$('footer').remove()")

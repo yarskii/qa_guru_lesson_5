@@ -31,17 +31,11 @@ def open_browser():
     }
     options.capabilities.update(selenoid_capabilities)
     driver = webdriver.Remote(
-        command_executor=f"https://user1:1234@selenoid.autotests.cloud/wd/hub",
+        command_executor=f"{selenoid_login}:{selenoid_pass}@{selenoid_url}/wd/hub",
         options=options
     )
 
     browser.config.driver = driver
-
-
-    # driver_options = webdriver.ChromeOptions()
-    # driver_options.page_load_strategy = 'eager'
-    # browser.config.driver_options = driver_options
-    # browser.config.base_url = 'https://demoqa.com'
 
     yield
 
