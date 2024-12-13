@@ -35,15 +35,15 @@ def open_browser():
         options=options
     )
 
+    browser.config.driver = driver
 
-    browser1 = browser.config(driver)
 
     # driver_options = webdriver.ChromeOptions()
     # driver_options.page_load_strategy = 'eager'
     # browser.config.driver_options = driver_options
     # browser.config.base_url = 'https://demoqa.com'
 
-    yield browser1
+    yield
 
     attach.add_screenshot(browser)
     attach.add_logs(browser)
