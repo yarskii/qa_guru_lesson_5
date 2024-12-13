@@ -19,7 +19,7 @@ selenoid_url = os.getenv("SELENOID_URL")
 
 
 @pytest.fixture(scope='function')
-def open_browser():
+def open_browser(request):
     options = Options()
     selenoid_capabilities = {
         "browserName": "chrome",
@@ -29,12 +29,11 @@ def open_browser():
             "enableVideo": True
         }
     }
-
     options.capabilities.update(selenoid_capabilities)
     driver = webdriver.Remote(
-        # command_executor=f"{selenoid_login}:{selenoid_pass}@{selenoid_url}/wd/hub",
-        command_executor="user1:1234@selenoid.autotests.cloud/wd/hub",
-        options=options)
+        command_executor=f"https://user1:1234@selenoid.autotests.cloud/wd/hub",
+        options=options
+    )
 
     browser.config.driver = driver
 
