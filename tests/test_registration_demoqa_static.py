@@ -3,6 +3,13 @@ from demoqa_tests.model.pages.registration_page import RegistrationPage
 from resources.basic_data import IMAGE
 
 
+@allure.tag('web')
+@allure.feature("Регистрируем нового пользователя со статичными данными")
+@allure.story("Успешная регистрация")
+@allure.severity(allure.severity_level.CRITICAL)
+@allure.label("owner", "Yaroslav Gusev")
+@allure.description("Тест для проверки ввода данных и проверки")
+@allure.link("https://demoqa.com/", name="Testing")
 def test_personal_date_static(open_demoqa):
     registration_page = RegistrationPage()
 

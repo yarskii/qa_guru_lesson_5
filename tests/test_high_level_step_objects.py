@@ -5,6 +5,13 @@ from demoqa_tests.model.pages.simple_user_registration_page import SimpleUserReg
 from resources import basic_data
 
 
+@allure.tag('web')
+@allure.feature("Регистрируем нового пользователя через high_level_step")
+@allure.story("Успешная регистрация")
+@allure.severity(allure.severity_level.CRITICAL)
+@allure.label("owner", "Yaroslav Gusev")
+@allure.description("Тест для проверки ввода данных и проверки")
+@allure.link("https://demoqa.com/", name="Testing")
 def test_personal_date_static_high(open_demoqa):
     registration_page = SimpleUserRegistrationPage()
 
