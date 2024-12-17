@@ -6,7 +6,7 @@ class RegistrationPage:
     def open(self):
         browser.open('https://demoqa.com/automation-practice-form')
         browser.config.window_width = 1280
-        browser.config.window_width = 768
+        browser.config.window_height = 768
         browser.driver.execute_script("$('#fixedban').remove()")
         browser.driver.execute_script("$('footer').remove()")
 
