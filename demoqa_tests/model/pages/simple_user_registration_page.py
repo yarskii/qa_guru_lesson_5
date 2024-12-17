@@ -9,6 +9,7 @@ class SimpleUserRegistrationPage:
         browser.open('https://demoqa.com/automation-practice-form')
         browser.driver.execute_script("$('#fixedban').remove()")
         browser.driver.execute_script("$('footer').remove()")
+        browser.driver.fullscreen_window()
 
     def fill_full_name(self, first_name, last_name):
         browser.element('#firstName').type(first_name)
