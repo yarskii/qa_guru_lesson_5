@@ -13,9 +13,7 @@ DEFAULT_BROWSER_VERSION = "126.0"
 def pytest_addoption(parser):
     parser.addoption(
         '--browser_version',
-        action='store',
         default=DEFAULT_BROWSER_VERSION,
-        help='Version of the browser'
     )
 
 
@@ -24,7 +22,7 @@ def load_env():
     load_dotenv()
 
 
-@pytest.fixture(scope='session')
+@pytest.fixture(scope='function')
 def open_browser(request):
     browser_version = request.config.getoption('browser_version') or DEFAULT_BROWSER_VERSION
 
