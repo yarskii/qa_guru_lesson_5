@@ -1,12 +1,14 @@
 from selene import browser, have, be, by
 
 from demoqa_tests.data.users import User
+import time
 
 
 class SimpleUserRegistrationPage:
 
     def open(self):
         browser.open('/')
+        time.sleep(2)
         browser.driver.execute_script("$('#fixedban').remove()")
         browser.driver.execute_script("$('footer').remove()")
 
