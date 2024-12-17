@@ -5,7 +5,7 @@ from demoqa_tests.model.pages.simple_user_registration_page import SimpleUserReg
 from resources import basic_data
 
 
-def test_personal_date_static_high(open_browser):
+def test_personal_date_static_high(open_demoqa):
     registration_page = SimpleUserRegistrationPage()
 
     with allure.step('Открываем страницу регистрации пользователя DemoQA'):

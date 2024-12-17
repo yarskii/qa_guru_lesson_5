@@ -3,7 +3,7 @@ from resources import basic_data
 from resources.basic_data import IMAGE
 
 
-def test_personal_date_dynamic(open_browser):
+def test_personal_date_dynamic(open_demoqa):
     registration_page = RegistrationPage()
 
     registration_page.open()

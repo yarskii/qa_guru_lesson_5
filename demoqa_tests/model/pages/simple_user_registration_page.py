@@ -7,8 +7,6 @@ class SimpleUserRegistrationPage:
 
     def open(self):
         browser.open('/')
-        # browser.config.window_width = 1280
-        # browser.config.window_height = 720
         browser.driver.execute_script("$('#fixedban').remove()")
         browser.driver.execute_script("$('footer').remove()")
 
