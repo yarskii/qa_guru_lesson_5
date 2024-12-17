@@ -11,7 +11,6 @@ class RegistrationPage:
         browser.driver.execute_script("$('#fixedban').remove()")
         browser.driver.execute_script("$('footer').remove()")
 
-
     def fill_full_name(self, first_name, last_name):
         browser.element('#firstName').type(first_name)
         browser.element('#lastName').type(last_name)
