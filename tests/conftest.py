@@ -44,3 +44,11 @@ def open_browser(load_env):
     attach.add_logs(browser)
     attach.add_html(browser)
     attach.add_video(browser)
+
+
+@pytest.fixture(scope='session')
+def open_demoqa(open_browser):
+    driver_options = webdriver.ChromeOptions()
+    driver_options.page_load_strategy = 'eager'
+    browser.config.driver_options = driver_options
+    browser.config.base_url = 'https://demoqa.com/automation-practice-form'
