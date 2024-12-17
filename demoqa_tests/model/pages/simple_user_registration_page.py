@@ -6,9 +6,9 @@ from demoqa_tests.data.users import User
 class SimpleUserRegistrationPage:
 
     def open(self):
-        browser.open('https://demoqa.com/automation-practice-form')
-        browser.config.window_width = 1280
-        browser.config.window_height = 720
+        browser.open('/')
+        # browser.config.window_width = 1280
+        # browser.config.window_height = 720
         browser.driver.execute_script("$('#fixedban').remove()")
         browser.driver.execute_script("$('footer').remove()")
 

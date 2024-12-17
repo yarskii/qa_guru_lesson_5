@@ -36,6 +36,12 @@ def open_browser(load_env):
         options=options
     )
 
+    driver_options = webdriver.ChromeOptions()
+    driver_options.page_load_strategy = 'eager'
+    browser.config.driver_options = driver_options
+    browser.config.base_url = 'https://demoqa.com/automation-practice-form'
+    browser.driver.fullscreen_window()
+
     browser.config.driver = driver
 
     yield driver
