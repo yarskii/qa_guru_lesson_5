@@ -25,7 +25,6 @@ def load_env():
 @pytest.fixture(scope='session')
 def open_browser(request):
     browser_version = request.config.getoption('browser_version') or DEFAULT_BROWSER_VERSION
-    # browser_version = browser_version if browser_version != "" else DEFAULT_BROWSER_VERSION
 
     options = Options()
     selenoid_capabilities = {
