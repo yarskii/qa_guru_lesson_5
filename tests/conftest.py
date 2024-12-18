@@ -22,7 +22,7 @@ def load_env():
     load_dotenv()
 
 
-@pytest.fixture(scope='function')
+@pytest.fixture(scope='session')
 def open_browser(request):
     browser_version = request.config.getoption('browser_version') or DEFAULT_BROWSER_VERSION
 
@@ -54,6 +54,8 @@ def open_browser(request):
     attach.add_logs(browser)
     attach.add_html(browser)
     attach.add_video(browser)
+
+    driver.quit()
 
 
 @pytest.fixture(scope='session')
